@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compara productos de supermercado para comprar de forma sana y económica.">
+  <title>Canasta | Compra mejor</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body class="modal-open">
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Navegación principal">
+      <a class="brand" href="#" aria-label="Canasta, inicio">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span>canasta</span>
+      </a>
+      <div class="nav-links">
+        <a class="active" href="#comparar">Comparar</a>
+        <a href="#supermercados">Supermercados</a>
+        <a href="#consejos">Consejos</a>
+      </div>
+      <button class="basket-button" type="button" aria-label="Abrir cesta">
+        <span aria-hidden="true">🛒</span>
+        <span>Cesta</span>
+        <strong>0.00 €</strong>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="comparar">
+      <div class="hero-content">
+        <p class="eyebrow">Compra con intención</p>
+        <h1>Tu compra diaria, <span>más inteligente.</span></h1>
+        <p class="hero-text">Compara precios de tus supermercados favoritos y encuentra opciones sanas que también cuidan tu bolsillo.</p>
+        <a class="primary-button" href="#productos">Ver productos <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="comparison-card" aria-label="Resumen de comparación">
+        <div class="card-heading">
+          <strong>Comparativa de hoy</strong>
+          <span class="updated">● Actualizado</span>
+        </div>
+        <div class="comparison-row">
+          <span class="food-icon" aria-hidden="true">🥑</span>
+          <span><strong>Aguacate Hass</strong><small>3 supermercados</small></span>
+          <b>2,49 €</b>
+        </div>
+        <div class="comparison-row">
+          <span class="food-icon" aria-hidden="true">🍅</span>
+          <span><strong>Tomate rama</strong><small>3 supermercados</small></span>
+          <b>1,79 €</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section container" id="productos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Empieza por aquí</p>
+          <h2>Productos destacados</h2>
+        </div>
+        <p>Precios claros para elegir sin complicaciones.</p>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="product-detail container is-hidden" id="product-detail" aria-labelledby="detail-name">
+      <button class="back-button" id="back-to-catalog" type="button">
+        <span aria-hidden="true">←</span> Volver al catálogo
+      </button>
+      <div class="detail-layout">
+        <div class="detail-image-wrap">
+          <img class="detail-image" id="detail-image" src="" alt="">
+        </div>
+        <div class="detail-content">
+          <p class="eyebrow" id="detail-store"></p>
+          <h2 id="detail-name"></h2>
+          <div class="detail-rating" aria-label="Valoración del producto">
+            <span class="star-rating" id="detail-stars" aria-hidden="true"></span>
+            <span id="detail-score"></span>
+          </div>
+          <p class="detail-price" id="detail-price"></p>
+          <button class="add-cart-button" id="add-to-cart" type="button">
+            <span aria-hidden="true">🛒</span> Añadir a la cesta
+          </button>
+          <div class="nutrition-summary">
+            <h3>Información nutricional</h3>
+            <div class="nutrition-grid">
+              <div><strong id="detail-calories"></strong><small>calorías</small></div>
+              <div><strong id="detail-protein"></strong><small>proteínas</small></div>
+              <div><strong id="detail-fat"></strong><small>grasas</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="ai-rating-box" aria-labelledby="ai-rating-title">
+        <h3 id="ai-rating-title">Valoración IA</h3>
+        <p id="ai-rating-content">La estimación aparecerá aquí próximamente.</p>
+      </section>
+    </section>
+
+    <section class="benefits container" id="consejos" aria-label="Ventajas">
+      <article><span aria-hidden="true">↔</span><h2>Compara fácil</h2><p>Todo en un mismo lugar.</p></article>
+      <article><span aria-hidden="true">✦</span><h2>Come mejor</h2><p>Elige opciones equilibradas.</p></article>
+      <article><span aria-hidden="true">€</span><h2>Ahorra más</h2><p>Encuentra el mejor precio.</p></article>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="welcome-modal">
+    <section class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title" aria-describedby="welcome-description">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Cerrar mensaje de bienvenida">×</button>
+      <div class="welcome-icon" aria-hidden="true">✦</div>
+      <p class="eyebrow">Bienvenido a canasta</p>
+      <h2 id="welcome-title">Comprar sano también puede ser <span>económico.</span></h2>
+      <p id="welcome-description">Comparamos productos y precios de tus supermercados favoritos para ayudarte a llenar tu cesta de forma saludable, sencilla y sin gastar de más.</p>
+      <button class="primary-button modal-action" id="modal-action" type="button">Empezar a comparar <span aria-hidden="true">→</span></button>
+    </section>
+  </div>
+
+  <section class="chat-widget" aria-label="Asistente nutricional y de ahorro">
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <p class="eyebrow">Asistente Canasta</p>
+          <h2>Nutrición y ahorro</h2>
+        </div>
+        <button class="chat-close" id="chat-close" type="button" aria-label="Cerrar chat">×</button>
+      </div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite">
+        <p class="chat-bubble assistant">Hola. Puedo ayudarte a elegir productos saludables y ahorrar en tu compra.</p>
+      </div>
+      <form class="chat-form" id="chat-form">
+        <label class="sr-only" for="chat-input">Escribe tu mensaje</label>
+        <textarea id="chat-input" rows="1" placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit" aria-label="Enviar mensaje">↑</button>
+      </form>
+    </div>
+    <button class="chat-toggle" id="chat-toggle" type="button" aria-label="Abrir asistente" aria-expanded="false" aria-controls="chat-panel">
+      <span aria-hidden="true">✦</span>
+    </button>
+  </section>
+</body>
+</html>
