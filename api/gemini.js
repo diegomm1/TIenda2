@@ -2,7 +2,7 @@
 // Los modelos se pueden cambiar sin tocar el código con las variables de Vercel:
 //   GEMINI_MODEL           -> modelo principal
 //   GEMINI_FALLBACK_MODEL  -> modelo de reserva si el principal está saturado o no existe
-const DEFAULT_MODEL = "gemini-3.5-flash";
+const DEFAULT_MODEL = "gemini-3.5-flash-lite";
 const DEFAULT_FALLBACK_MODEL = "gemini-3.1-flash-lite";
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
 
